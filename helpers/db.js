@@ -2,7 +2,7 @@ require('dotenv').config()
 
 const { Pool } = require('pg')
 
-const openDb = () => {
+// const openDb = () => {
 
 const pool = new Pool({
 user: process.env.DB_USER,
@@ -15,7 +15,7 @@ ssl:process.env.SSL
 
 // return pool
 
-}
+// }
 
 const query = (sql, values = []) => {
 

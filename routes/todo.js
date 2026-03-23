@@ -76,4 +76,4 @@ res.status(500).json({error:error})
 
 })
 
-module.exports = router
+module.exports = {router}
