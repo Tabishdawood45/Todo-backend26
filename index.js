@@ -1,23 +1,46 @@
+// require('dotenv').config()
+
+// const express = require('express')
+// const cors = require('cors')
+
+// // Import query from db.js
+
+// const todoRouter = require('./routes/todo')
+
+// const app = express()
+// app.use(cors())
+// app.use(express.json())
+
+// const port = process.env.PORT || 10000;
+
+// // ---------------- TEMP: Create task table if it does not exist ----------------
+
+// // USE ROUTES
+// app.use("/", todoRouter)
+
+// app.listen(port, () => {
+//     console.log("Server running on port " + port)
+// })
+
+
+
+
 require('dotenv').config()
+// const { Pool } = require("pg");
+const express = require("express");
+const cors = require("cors");
+const { todoRouter } = require('./routes/todo.js');
 
-const express = require('express')
-const cors = require('cors')
+const app = express();
 
-// Import query from db.js
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended : false}));
 
-const todoRouter = require('./routes/todo')
+app.use('/', todoRouter);
 
-const app = express()
-app.use(cors())
-app.use(express.json())
-
-const port = process.env.PORT || 10000;
-
-// ---------------- TEMP: Create task table if it does not exist ----------------
-
-// USE ROUTES
-app.use("/", todoRouter)
+const port = process.env.PORT;
 
 app.listen(port, () => {
-    console.log("Server running on port " + port)
-})
+    console.log(`Server running on port ${port}`);
+});
