@@ -3,7 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 
-const todoRouter = require('./server/routes/todo')
+const todoRouter = require('./routes/todo')
 
 const app = express()
 
