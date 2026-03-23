@@ -13,7 +13,7 @@ port: process.env.DB_PORT,
 ssl:process.env.SSL
 })
 
-return pool
+// return pool
 
 }
 
@@ -23,7 +23,7 @@ return new Promise(async (resolve, reject) => {
 
 try{
 
-const pool = openDb()
+// const pool = openDb()
 
 const result = await pool.query(sql, values)
 

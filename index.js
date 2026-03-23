@@ -11,7 +11,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-const port = process.env.PORT
+const port = process.env.PORT || 10000;
 
 // ---------------- TEMP: Create task table if it does not exist ----------------
 
