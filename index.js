@@ -1,3 +1,18 @@
+// TEMP: Create task table if it does not exist
+const createTableQuery = `
+CREATE TABLE IF NOT EXISTS task (
+    id SERIAL PRIMARY KEY,
+    description VARCHAR(255) NOT NULL
+);
+`;
+
+query(createTableQuery)
+  .then(() => console.log("Task table ready"))
+  .catch(err => console.log("Error creating table:", err));
+
+
+
+
 require('dotenv').config()
 
 const express = require('express')
